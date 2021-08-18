@@ -41,7 +41,7 @@
         {% if user.is_authenticated%}
         <h2><a href="{% url 'new_post'%}"><input style="margin:50px;" type="button" value="Yangi post qo'shish" class="waves-effect waves-light btn"></a></h2>
         {% else %}
-        <h2><a href="#"><input style="margin:50px;" type="button" value="Yangi post qo'shish" class="waves-effect waves-light btn"></a></h2>
+        <h2><a href="#"><input style="margin:50px;" type="button" value="Yangi post qo'shish" class="waves-effect waves-light btn"><script>alert("Siz Ro'yxatdan o'tmagansiz")</script></a></h2>
         {%endif%}
     </footer>
 {% block scripts %}
