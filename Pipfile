@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 django = "*"
 django-materializecss-form = "*"
+whitenoise = "*"
+gunicorn = "*"
 
 [dev-packages]
 
