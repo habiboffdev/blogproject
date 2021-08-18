@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if user.is_authenticated%}
   <h1>Postni o'chirish</h1>
   <form action="" method="post">{% csrf_token %}
     <p>"{{ post.title }}" postini o'chirishni xohlaysizmi?</p>
     <input type="submit" value="O'chirish" class="waves-effect waves-light btn">
   </form>
+{% else %}
+<h4 class="truncate">Siz ro'yxatdan o'tmagansiz</h4>
+{% endif%}
 {% endblock content %}

@@ -2,9 +2,13 @@
 {% load materializecss %}
 
 {% block content %}
+{% if user.is_authenticated%}
   <h4 class="truncate">Tahrirlash</h4>
   <form action="" method="post">{% csrf_token %}
     {{ form|materializecss:'m6' }}
     <input type="submit" value="Yangilash" class="waves-effect waves-light btn">>
   </form>
+{% else %}
+<h4 class="truncate">Siz ro'yxatdan o'tmagansiz</h4>
+{% endif%}
 {% endblock content %}
