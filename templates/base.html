@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {% block css%}
+    <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/css/materialize.min.css" integrity="sha256-qj3p6P1fJIV+Ndv7RW1ovZI2UhOuboj9GcODzcNFIN8=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% endblock css%}
+    <title>MirzoDev Blog</title>
+
+
+</head>
+<body style="font-size:18px">
+<div>
+        <div style="float:right; margin:30px;margin-top:20px">
+    {% if user.is_authenticated%}
+<!--    <p>Xush kelibsiz {{user.username.title}}</p>-->
+        <a href="{% url 'logout'%}"><button class="waves-effect waves-light btn" >Chiqish</button></a>
+    {% else %}
+    <a href="{% url 'signup'%}"><button class="waves-effect waves-light btn" >Ro'yxatdan o'tish</button></a><b>|</b><a href="{% url 'login'%}"><button class="waves-effect waves-light btn" >Kirish</button></a>
+    {% endif %}
+            </div>
+        </div>
+    <header>
+
+
+        <h1 class="truncate">
+            <a href = "{% url 'home' %}">MirzoDev Blog</a>
+            <hr/>
+        </h1>
+
+    </header>
+
+    <div class="container">
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <footer>
+        <h2><a href="{% url 'new_post'%}"><input style="margin:50px;" type="button" value="Yangi post qo'shish" class="waves-effect waves-light btn"></a></h2>
+    </footer>
+{% block scripts %}
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js" integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function(){
+
+  // Initialize materialize data picker
+  $('.datepicker').datepicker({'format': 'yyyy-mm-dd'});
+  $('select').formSelect();
+
+});
+</script>
+
+{% endblock scripts %}
+</body>
+</html>

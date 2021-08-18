@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="post-entry">
+        <h4>{{post.title}}</h4>
+        <h5>{{post.author}}</h5>
+        <p>{{post.body}}</p>
+    </div>
+
+<p><a href="{% url 'post_edit' post.pk %}"> <input type="button" value="Postni tahrirlash" class="waves-effect waves-light btn"></a> |
+<a href="{% url 'post_del' post.pk %}"><input type="button" value="Postni O'chirish" class="waves-effect waves-light btn"></a></p>
+{% endblock content %}

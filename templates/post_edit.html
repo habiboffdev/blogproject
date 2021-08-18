@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load materializecss %}
+
+{% block content %}
+  <h4 class="truncate">Tahrirlash</h4>
+  <form action="" method="post">{% csrf_token %}
+    {{ form|materializecss:'m6' }}
+    <input type="submit" value="Yangilash" class="waves-effect waves-light btn">>
+  </form>
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% load materializecss%}
+{% block content%}
+    <div>
+        <h2>Saytga kirish</h2>
+        <form method="post">{% csrf_token %}
+            {{ form|materializecss:'m6' }}
+            <button type="submit" class="waves-effect waves-light btn">Kirish</button>
+</form>
+
+
+    </div>
+
+
+{%endblock content %}
